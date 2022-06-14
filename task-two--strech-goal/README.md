@@ -32,4 +32,3 @@ Automate the [task-one](../task-one/README.md) using terraform but with applicat
    ]
 }
 ```
-
