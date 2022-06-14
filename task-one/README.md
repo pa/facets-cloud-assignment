@@ -51,9 +51,6 @@ Deployment of Blue - Green application using Kubernetes Configuration files
 - [ingress/ingress-green-app-canary.yml](ingress/ingress-green-app-canary.yml) - Contains weight based path routing to `green-app` backend service using `nginx.ingress.kubernetes.io/canary-weight` annotation with [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 - [test-canary-release.sh](test-canary-release.sh) - It is a shell script to test the canaray release of the application. This script will curl minikube ip 10 times to see if the traffics are routed to services based on the canary configuration (i.e 25% traffic to green app and 75% to blue app).
 
-
-deployments/blue-app.yml
-
 ### Pre-requisite
 
 - Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
@@ -70,6 +67,8 @@ deployments/blue-app.yml
     # To start the minikube
     minikube start
     ```
+
+    > Note: _For demonstration purpose, I'm using minikube as local Kubernetes cluster. You can also deploy these configuration in any k8s cluster_
 
 - Deploy blue and green app
 
@@ -99,6 +98,19 @@ deployments/blue-app.yml
     ./test-canary-release.sh
     ```
 
+- To delete kubernetes resources
+
+    ```bash
+    # To delete deployments
+    kubectl delete -f deployments/
+
+    # To delete services
+    kubectl delete -f services/
+
+    # To delete ingresses
+    kubectl delete -f ingress/
+    ```
+
 - Some useful commands to list deployment, services, ingress and node
 
     ```bash
@@ -120,3 +132,7 @@ deployments/blue-app.yml
     # To get url of service if it is of type NodePort
     minikube service <service-name> --url
     ```
+
+### Demo
+
+[![asciicast](https://asciinema.org/a/KYooeOR8IbtuCMTFbRLuW6yaU.svg)](https://asciinema.org/a/KYooeOR8IbtuCMTFbRLuW6yaU)
