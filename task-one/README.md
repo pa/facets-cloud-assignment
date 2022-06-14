@@ -25,7 +25,7 @@ Deployment of Blue - Green application using Kubernetes Configuration files
 
 ## Solution
 
-### Directory Struture
+### Directory struture
 
 ```bash
 .
@@ -111,7 +111,7 @@ Deployment of Blue - Green application using Kubernetes Configuration files
     kubectl delete -f ingress/
     ```
 
-- Some useful commands to list deployment, services, ingress and node
+- Some useful commands
 
     ```bash
     # To list deployments
