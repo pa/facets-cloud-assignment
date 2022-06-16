@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue-app-svc
+spec:
+  selector:
+    app: blue-app
+  ports:
+  - name: blue-app-port
+    targetPort: 8080
+    port: 8080
+    protocol: TCP
+  type: ClusterIP
