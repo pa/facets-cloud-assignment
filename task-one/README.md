@@ -55,6 +55,13 @@ Deployment of Blue - Green application using Kubernetes Configuration files
 
 - Install [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - Install [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+- Enable the ingress controller
+
+    ```bash
+    minikube addons enable ingress
+    ```
+
+    > **Note:** _If you are not using minikube then follow [this](https://kubernetes.github.io/ingress-nginx/deploy/#installation-guide) installation guide for installing NGINX Ingress Controller_
 
 ### Deployment steps
 
